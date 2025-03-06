@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import GlobalContext from '../context/GlobalContext';
-import './css/CardCatalog.css';
+import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+import GlobalContext from "../context/GlobalContext";
+import "./css/CardCatalog.css";
 
 function CardCatalog() {
   const { catalog, setCatalog } = useContext(GlobalContext);
@@ -13,19 +13,16 @@ function CardCatalog() {
 
   function renderMealsCards() {
     return catalogLimited.map((food, index) => (
-      <Link
-        key={ index }
-        to={ `/comidas/${food.idMeal}` }
-      >
-        <div data-testid={ `${index}-recipe-card` } className="supply-card">
-          <div data-testid={ `${index}-card-name` }>
+      <Link key={index} to={`/comidas/${food.idMeal}`}>
+        <div data-testid={`${index}-recipe-card`} className="supply-card">
+          <div data-testid={`${index}-card-name`}>
             <h1>{food.strMeal}</h1>
           </div>
           <img
             className="supply-img"
-            src={ food.strMealThumb }
-            alt={ food.strMeal }
-            data-testid={ `${index}-card-img` }
+            src={food.strMealThumb}
+            alt={food.strMeal}
+            data-testid={`${index}-card-img`}
           />
         </div>
       </Link>
@@ -33,33 +30,34 @@ function CardCatalog() {
   }
 
   function renderDrinksCards() {
+    if (!catalog || !catalog.drinks || catalog.drinks === "no data found") {
+      return null;
+    }
+
+    const catalogLimited = catalog.drinks.slice(0, maxCardsOnPage);
+
     return catalogLimited.map((drink, index) => (
-      <Link
-        key={ index }
-        to={ `/bebidas/${drink.idDrink}` }
-      >
-        <div data-testid={ `${index}-recipe-card` } className="supply-card">
-          <div
-            data-testid={ `${index}-card-name` }
-          >
+      <Link key={index} to={`/bebidas/${drink.idDrink}`}>
+        <div data-testid={`${index}-recipe-card`} className="supply-card">
+          <div data-testid={`${index}-card-name`}>
             <h1>{drink.strDrink}</h1>
           </div>
           <img
             className="supply-img"
-            src={ drink.strDrinkThumb }
-            alt={ drink.strDrink }
-            data-testid={ `${index}-card-img` }
+            src={drink.strDrinkThumb}
+            alt={drink.strDrink}
+            data-testid={`${index}-card-img`}
           />
         </div>
       </Link>
     ));
   }
 
-  useEffect(() => () => setCatalog(''), [setCatalog]);
+  useEffect(() => () => setCatalog(""), [setCatalog]);
 
   return (
     <div>
-      {supplyIdentity === 'meals' ? renderMealsCards() : renderDrinksCards()}
+      {supplyIdentity === "meals" ? renderMealsCards() : renderDrinksCards()}
     </div>
   );
 }
