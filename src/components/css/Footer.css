@@ -1,7 +1,43 @@
 .footer {
   bottom: 0;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 1200px;
+  background-color: transparent;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.footer-inner {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  position: fixed;
-  width: 360px;
+  padding: 0 20%;
+  box-sizing: border-box;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.footer img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Aplicar estilos específicos para as páginas de bebidas */
+body[data-page="drinks"] .footer {
+  /* Mesmos estilos que aplicamos para as páginas de comidas */
 }
