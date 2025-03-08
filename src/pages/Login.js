@@ -55,7 +55,7 @@ function Login(props) {
             type="password"
             id="password"
             onChange={ (e) => setPassword(e.target.value) }
-            placeholder="Senha:"
+            placeholder="Password:"
           />
         </div>
         <button
@@ -64,7 +64,7 @@ function Login(props) {
           type="button"
           onClick={ sendInfoToLocalStorangeAndRedirect }
         >
-          Entrar
+          Login
         </button>
       </div>
     </div>

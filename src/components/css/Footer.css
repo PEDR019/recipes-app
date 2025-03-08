@@ -1,35 +1,66 @@
 .footer {
-  bottom: 0;
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  max-width: 1200px;
-  background-color: transparent;
-  padding: 10px 0;
-  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-inner {
-  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
+              url('https://i.postimg.cc/wjQkkm7Y/footer-foodrink.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
-  padding: 0 20%; 
-  box-sizing: border-box;
+  align-items: center;
+  padding: 10px 20px 10px;
+  width: 722px;
+  max-width: 722px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: #616161;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  margin: 0 5px;
+  transition: color 0.3s, transform 0.2s;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+}
+
+.icon-button:hover, .icon-button:focus {
+  color: #FF4500;
+  transform: translateY(-5px);
+  outline: none;
+}
+
+.icon-button:active {
+  transform: translateY(0);
+}
+
+.beer-icon, .explore-icon, .food-icon {
+  transition: transform 0.3s;
+}
+
+.icon-button:hover .beer-icon,
+.icon-button:hover .explore-icon,
+.icon-button:hover .food-icon {
+  transform: scale(1.2);
 }
 
 .footer a {
   text-decoration: none;
-}
-
-.footer button {
-  background: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 5px;
 }
 
 .footer img {
@@ -37,14 +68,31 @@
   height: 28px;
 }
 
-body[data-page="drinks"] .footer {
-  bottom: 0;
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  max-width: 1200px;
-  background-color: transparent;
-  padding: 10px 0;
-  z-index: 1000;
+/* Adicione estas linhas para colorir os ícones SVG */
+.beer-icon {
+  color: #f39c12; /* Amarelo dourado para cerveja */
+}
+
+.explore-icon {
+  color: #3498db; /* Azul para ícone de explorar */
+}
+
+.food-icon {
+  color: #e74c3c; /* Vermelho para ícone de comida */
+}
+
+/* Estados ativos (opcional) */
+body[data-page="drinks"] .beer-icon {
+  color: #d35400; /* Cor mais escura quando ativo */
+  transform: scale(1.2);
+}
+
+body[data-page="other"] .explore-icon {
+  color: #2980b9; /* Cor mais escura quando ativo */
+  transform: scale(1.2);
+}
+
+body[data-page="meals"] .food-icon {
+  color: #c0392b; /* Cor mais escura quando ativo */
+  transform: scale(1.2);
 }

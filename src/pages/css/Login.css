@@ -1,54 +1,99 @@
 .login-page {
-  border: 3px solid #f1f1f1;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .login-page .container {
-  font-family: Times , serif;
-  padding: 16px;
+  background-image: url('https://i.postimg.cc/9FfkwHVC/backgroundlogin.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  position: relative;
+  font-family: Times, serif;
+  padding: 30px 25px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-page .container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 15px;
+  z-index: 0;
+}
+
+.login-page .container > * {
+  position: relative;
+  z-index: 1;
 }
 
 .login-page h1 {
   text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 2.2rem;
 }
 
 .login-page input {
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
   box-sizing: border-box;
   display: inline-block;
-  margin: 8px 0;
-  padding: 12px 20px;
+  margin: 12px 0;
+  padding: 14px 20px;
   width: 100%;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.login-page input:focus {
+  border-color: rgb(100, 198, 255);
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .login-page img {
-  width: 70%;
+  width: 60%;
+  max-width: 200px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .login-page button {
   background-color: rgb(100, 198, 255);
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   color: black;
   cursor: pointer;
-  margin: 8px 0;
+  margin: 20px 0 10px;
   padding: 14px 20px;
   width: 100%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s;
 }
 
 .login-page button:disabled {
   background-color: rgb(107, 107, 107);
-  color: black;
+  color: #e0e0e0;
 }
 
-.login-page button:hover {
-  opacity: 0.8;
+.login-page button:hover:not(:disabled) {
+  background-color: rgb(70, 180, 250);
+  transform: translateY(-2px);
 }
 
 .login-page .imgcontainer {
-  margin: 24px 0 12px;
+  margin: 10px 0 25px;
   text-align: center;
 }

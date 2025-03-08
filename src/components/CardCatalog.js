@@ -6,10 +6,22 @@ import './css/CardCatalog.css';
 function CardCatalog() {
   const { catalog, setCatalog } = useContext(GlobalContext);
 
-  const supplyIdentity = Object.keys(catalog)[0];
+  const supplyIdentity = catalog && typeof catalog === 'object' ? Object.keys(catalog)[0] : null;
 
   const maxCardsOnPage = 12;
-  const catalogLimited = catalog[supplyIdentity].slice(0, maxCardsOnPage);
+  
+  // Versão mais segura para definir catalogLimited
+  const catalogLimited = (() => {
+    // Verifica se catalog e supplyIdentity existem
+    if (!catalog || !supplyIdentity) return [];
+    
+    // Verifica se catalog[supplyIdentity] existe e é um array
+    const data = catalog[supplyIdentity];
+    if (!data) return [];
+    
+    // Se for um array, faz o slice, caso contrário, retorna array vazio
+    return Array.isArray(data) ? data.slice(0, maxCardsOnPage) : [];
+  })();
 
   function renderMealsCards() {
     return catalogLimited.map((food, index) => (
@@ -17,7 +29,11 @@ function CardCatalog() {
         key={ index }
         to={ `/comidas/${food.idMeal}` }
       >
-        <div data-testid={ `${index}-recipe-card` } className="supply-card">
+        <div 
+        data-testid={ `${index}-recipe-card` } 
+        className="supply-card"
+        style={{ backgroundColor: '#eaeaea' }}
+        >
           <div data-testid={ `${index}-card-name` }>
             <h1>{food.strMeal}</h1>
           </div>
@@ -38,7 +54,10 @@ function CardCatalog() {
         key={ index }
         to={ `/bebidas/${drink.idDrink}` }
       >
-        <div data-testid={ `${index}-recipe-card` } className="supply-card">
+        <div data-testid={ `${index}-recipe-card` } 
+        className="supply-card"
+        style={{ backgroundColor: '#eaeaea' }}
+        >
           <div
             data-testid={ `${index}-card-name` }
           >
@@ -56,6 +75,8 @@ function CardCatalog() {
   }
 
   useEffect(() => () => setCatalog(''), [setCatalog]);
+
+
 
   return (
     <div>
