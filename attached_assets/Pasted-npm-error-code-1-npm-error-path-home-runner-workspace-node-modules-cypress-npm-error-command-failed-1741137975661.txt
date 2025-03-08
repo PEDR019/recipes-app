@@ -1,0 +1,45 @@
+npm error code 1
+npm error path /home/runner/workspace/node_modules/cypress
+npm error command failed
+npm error command sh -c node index.js --exec install
+npm error node:internal/modules/cjs/loader:1228
+npm error   throw err;
+npm error   ^
+npm error
+npm error Error: Cannot find module './util/root'
+npm error Require stack:
+npm error - /home/runner/workspace/node_modules/listr/node_modules/rxjs/Observable.js
+npm error - /home/runner/workspace/node_modules/listr/node_modules/rxjs/Subject.js
+npm error - /home/runner/workspace/node_modules/listr/lib/task.js
+npm error - /home/runner/workspace/node_modules/listr/index.js
+npm error - /home/runner/workspace/node_modules/cypress/lib/tasks/install.js
+npm error - /home/runner/workspace/node_modules/cypress/index.js
+npm error     at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+npm error     at Module._load (node:internal/modules/cjs/loader:1051:27)
+npm error     at Module.require (node:internal/modules/cjs/loader:1311:19)
+npm error     at require (node:internal/modules/helpers:179:18)
+npm error     at Object.<anonymous> (/home/runner/workspace/node_modules/listr/node_modules/rxjs/Observable.js:2:14)
+npm error     at Module._compile (node:internal/modules/cjs/loader:1469:14)
+npm error     at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+npm error     at Module.load (node:internal/modules/cjs/loader:1288:32)
+npm error     at Module._load (node:internal/modules/cjs/loader:1104:12)
+npm error     at Module.require (node:internal/modules/cjs/loader:1311:19)
+npm error     at require (node:internal/modules/helpers:179:18)
+npm error     at Object.<anonymous> (/home/runner/workspace/node_modules/listr/node_modules/rxjs/Subject.js:7:20)
+npm error     at Module._compile (node:internal/modules/cjs/loader:1469:14)
+npm error     at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+npm error     at Module.load (node:internal/modules/cjs/loader:1288:32)
+npm error     at Module._load (node:internal/modules/cjs/loader:1104:12) {
+npm error   code: 'MODULE_NOT_FOUND',
+npm error   requireStack: [
+npm error     '/home/runner/workspace/node_modules/listr/node_modules/rxjs/Observable.js',
+npm error     '/home/runner/workspace/node_modules/listr/node_modules/rxjs/Subject.js',
+npm error     '/home/runner/workspace/node_modules/listr/lib/task.js',
+npm error     '/home/runner/workspace/node_modules/listr/index.js',
+npm error     '/home/runner/workspace/node_modules/cypress/lib/tasks/install.js',
+npm error     '/home/runner/workspace/node_modules/cypress/index.js'
+npm error   ]
+npm error }
+npm error
+npm error Node.js v20.18.1
+npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2025-03-07T21_00_36_653Z-debug-0.log
