@@ -1,3 +1,9 @@
+> 📢 This README is in Portuguese.
+> If you prefer, you can check the original project cloned from a private educational institution repository on GitHub:
+> [Original Repository](https://github.com/Pedrodev1/sd-011-project-recipes)
+> [(https://github.com/tryber)].
+
+
 ### Termos de uso
 
 Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
