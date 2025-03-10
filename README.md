@@ -4,11 +4,11 @@
 
 > -------------
 
-> [Trybe School Github](https://github.com/tryber).
+> [Trybe School Github](https://github.com/tryber)
 
 >-----------------
 
-> [Trybe Website](https://betrybe.com).
+> [Trybe Website](https://betrybe.com)
 
 >-----------------
 
