@@ -1,7 +1,7 @@
 > 📢 This README is in Portuguese.
 > If you prefer, you can check the original project cloned from a private educational institution repository on GitHub:
 > [Original Repository](https://github.com/Pedrodev1/sd-011-project-recipes)
-> [(https://github.com/tryber)].
+> [Trybe School Github](https://github.com/tryber).
 
 
 ### Termos de uso
